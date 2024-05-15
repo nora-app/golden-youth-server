@@ -1,4 +1,4 @@
-package nora.goldenyouth.exception;
+package nora.goldenyouth.global.exception;
 
 import lombok.Getter;
 

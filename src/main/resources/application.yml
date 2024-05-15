@@ -14,7 +14,6 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
-
   jpa:
     hibernate:
       auto_quote_keyword: create
@@ -25,7 +24,19 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
         use_sql_comments: true
-
+# AWS setting
+cloud:
+  aws:
+    s3:
+      bucket: ${S3_BUCKET_NAME}
+    credentials:
+      access-key: ${AWS_ACCESS_KEY}
+      secret-key: ${AWS_SECRET_KEY}
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false
 logging:
   level:
     org:
