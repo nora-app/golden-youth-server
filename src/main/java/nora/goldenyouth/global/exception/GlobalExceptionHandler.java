@@ -1,4 +1,4 @@
-package nora.goldenyouth.exception;
+package nora.goldenyouth.global.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
