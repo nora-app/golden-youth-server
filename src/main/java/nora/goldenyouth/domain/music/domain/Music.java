@@ -35,9 +35,4 @@ public class Music {
     @LastModifiedDate
     @Column(name="updatedAt")
     private LocalDateTime updatedAt;
-
-
-
-
-
 }
