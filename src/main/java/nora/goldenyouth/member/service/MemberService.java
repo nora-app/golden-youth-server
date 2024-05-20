@@ -2,9 +2,9 @@ package nora.goldenyouth.member.service;
 
 public interface MemberService {
 
-    void checkPhoneNumberDuplication(String phoneNumber);
+    boolean validatePhoneNumber(String phoneNumber);
 
-    void checkNicknameDuplication(String nickname);
+    boolean validateNickname(String nickname);
 //
 //    void sendVerificationCode();
 //

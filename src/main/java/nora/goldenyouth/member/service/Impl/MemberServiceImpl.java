@@ -2,8 +2,6 @@ package nora.goldenyouth.member.service.Impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import nora.goldenyouth.global.exception.CustomException;
-import nora.goldenyouth.global.exception.ErrorCode;
 import nora.goldenyouth.member.domain.Member;
 import nora.goldenyouth.member.repository.MemberRepository;
 import nora.goldenyouth.member.service.MemberService;
@@ -21,20 +19,22 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     @Transactional(readOnly = true)
-    public void checkPhoneNumberDuplication(String phoneNumber) {
+    public boolean validatePhoneNumber(String phoneNumber) {
         if (isDuplicatePhoneNumber(phoneNumber)) {
             log.error("Duplicate phone number: {}", phoneNumber);
-            throw new CustomException(ErrorCode.PHONE_NUMBER_CONFLICT);
+            return false;
         }
+        return true;
     }
 
     @Override
     @Transactional(readOnly = true)
-    public void checkNicknameDuplication(String nickname) {
+    public boolean validateNickname(String nickname) {
         if (isDuplicateNickname(nickname)) {
             log.error("Duplicate nickname: {}", nickname);
-            throw new CustomException(ErrorCode.NICKNAME_CONFLICT);
+            return false;
         }
+        return true;
     }
 
     private boolean isDuplicatePhoneNumber(String phoneNumber) {
