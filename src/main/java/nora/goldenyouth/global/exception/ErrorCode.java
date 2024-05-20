@@ -17,7 +17,6 @@ public enum ErrorCode {
      * 403 Forbidden: 승인을 거부함
      */
 
-
     /*
      * 404 NOT_FOUND: 리소스를 찾을 수 없음
      */
@@ -26,6 +25,12 @@ public enum ErrorCode {
      * 405 METHOD_NOT_ALLOWED: 허용되지 않은 Request Method 호출
      */
     METHOD_NOT_ALLOWED(HttpStatus.METHOD_NOT_ALLOWED, "허용되지 않은 메서드입니다."),
+
+    /*
+     * 409 CONFLICT: 충돌 발생
+     */
+    NICKNAME_CONFLICT(HttpStatus.CONFLICT, "이미 존재하는 별명입니다."),
+    PHONE_NUMBER_CONFLICT(HttpStatus.CONFLICT, "이미 존재하는 전화번호입니다."),
 
     /*
      * 500 INTERNAL_SERVER_ERROR: 내부 서버 오류
