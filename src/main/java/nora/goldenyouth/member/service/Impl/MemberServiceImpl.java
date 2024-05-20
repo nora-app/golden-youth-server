@@ -20,21 +20,13 @@ public class MemberServiceImpl implements MemberService {
     @Override
     @Transactional(readOnly = true)
     public boolean validatePhoneNumber(String phoneNumber) {
-        if (isDuplicatePhoneNumber(phoneNumber)) {
-            log.error("Duplicate phone number: {}", phoneNumber);
-            return false;
-        }
-        return true;
+        return !isDuplicatePhoneNumber(phoneNumber);
     }
 
     @Override
     @Transactional(readOnly = true)
     public boolean validateNickname(String nickname) {
-        if (isDuplicateNickname(nickname)) {
-            log.error("Duplicate nickname: {}", nickname);
-            return false;
-        }
-        return true;
+        return !isDuplicateNickname(nickname);
     }
 
     private boolean isDuplicatePhoneNumber(String phoneNumber) {

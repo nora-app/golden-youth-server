@@ -17,12 +17,12 @@ public class MemberController {
     private final MemberService memberService;
 
     @GetMapping("/phone/{phoneNumber}")
-    public void validatePhoneNumber(@PathVariable String phoneNumber) {
-        memberService.validatePhoneNumber(phoneNumber);
+    public boolean validatePhoneNumber(@PathVariable String phoneNumber) {
+        return memberService.validatePhoneNumber(phoneNumber);
     }
 
     @GetMapping("/nickname/{nickname}")
-    public void validateNickname(@PathVariable String nickname) {
-        memberService.validateNickname(nickname);
+    public boolean validateNickname(@PathVariable String nickname) {
+        return memberService.validateNickname(nickname);
     }
 }
