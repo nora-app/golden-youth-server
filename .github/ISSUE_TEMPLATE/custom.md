@@ -1,7 +1,7 @@
 ---
 name: Custom issue template
 about: Describe this issue template's purpose here.
-title: "[Feat] 기능 "
+title: 'feat; 기능 '
 labels: ''
 assignees: ''
 
